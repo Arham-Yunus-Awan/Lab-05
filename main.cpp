@@ -22,13 +22,22 @@ using namespace std;
     cout << "Enter the number for which you want table: ";
     cin >> table_choice;
     for (int i = 1; i < 11; i++) {
-        cout << table_choice << " * " << i <<   " = " << (table_choice * i) << endl;  
+        cout << table_choice << " * " << i <<   " = " << (table_choice * i) << endl;
     }
     
     //  Task 4
-    for (int i = 0; i < 21; i = i + 2) {
-        cout << i << endl;
+    for (int i = 1; i < 21; i = i + 1) {
+        if (i % 2 == 0) {
+            cout << "Even: " << i << endl;
+        }
+        else {
+            cout << "Odd : "<< i << endl;
+        }
+        
+        // cout << i<< endl;
     }
+    
+    
     
     //  Task 5
     for (int i = 10; i > 0; i--) {
@@ -46,22 +55,28 @@ using namespace std;
     
     // Task 7
     int number_of_subject, marks;
+    int total = 0;
+    int average = 0;
     cout << "Enter number of subjects: ";
     cin >> number_of_subject;
     for (int i = 1; i <= number_of_subject; i ++) {
         cout << "Enter your marks out of 100: ";
         cin >> marks;
-        if (marks > 89) {
-            cout << "Grade A" <<endl;}
-        else if (marks >74) {
-            cout << "Grade B" << endl;
-        }
-        else if (marks > 49) {
-            cout << "Grade C" << endl;
-        }
-        else {
-             cout << "Grade F" << endl;
-        }
+        total += marks;
+    }
+    average = total / number_of_subject;
+    cout << "Total is: " << total << " out of " << (100 * number_of_subject) << endl;
+    cout << "Average is: " << average << endl;
+    if (average > 89) {
+        cout << "Grade A" <<endl;}
+    else if (average >74) {
+        cout << "Grade B" << endl;
+    }
+    else if (average > 49) {
+        cout << "Grade C" << endl;
+    }
+    else {
+         cout << "Grade F" << endl;
     }
     
     
